@@ -22,7 +22,9 @@ defmodule GooseWeb.PostLive.PostComponent do
                 </a>
             </div>
             <div class="column post-button-column">
+                <a href="#" phx-click="comment">
                 <i class="far fa-comment"></i>
+                </a>
             </div>
             <div class="column post-button-column">
                 <a href="#" phx-click="repost" phx-target="<%= @myself %>">
@@ -53,5 +55,9 @@ defmodule GooseWeb.PostLive.PostComponent do
         Goose.Timeline.inc_reposts(socket.assigns.post)
         {:noreply, socket}
     end
+
+    ###def handle_event("reply", _, socket) do
+    ###   Goose.Timeline.
+    ### end
 
 end

@@ -14,9 +14,10 @@ defmodule Goose.Timeline.Post do
   @doc false
   def changeset(post, attrs) do
     post
-    |> cast(attrs, [:body])
-    |> validate_required([:body])
+    |> cast(attrs, [:username, :body])
+    |> validate_required([:username, :body])
     |> validate_length(:body, min: 2, max: 280)
+    |> validate_length(:username, min: 2, max: 20)
 
   end
 end

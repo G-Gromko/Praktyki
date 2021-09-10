@@ -37,6 +37,13 @@ defmodule Goose.Timeline do
     broadcast({:ok, post}, :post_updated)
   end
 
+  def delete_post(%Post{} = post) do
+    {:ok, %Post{}} = Repo.delete(post)
+    broadcast({:ok, post}, :post_deleted)
+  end
+
+  
+
   @doc """
   Gets a single post.
 
